@@ -1,19 +1,18 @@
 <?php include 'includes/header.php'; ?>
-<div class="wrapper">
+<div class="container-fluid">
     <!-- Sidebar -->
-    <?php include 'includes/sidebar.php'; ?>
 
     <!-- Contenido principal dinámico -->
-    <div class="main-content">
+    <div class="main-content  mx-auto p-2">
         <?php
         // Obtener la página desde la URL
         $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 'dashboard';
 
         // Evitar que el usuario intente acceder a directorios prohibidos
-        $pagina = str_replace(['..', '\\'], '', $pagina); 
+        $pagina = str_replace(['..', '\\'], '', $pagina);
 
         // Ruta del archivo dentro de "modules/"
-        $archivo = "modules/$pagina.php";  
+        $archivo = "modules/$pagina.php";
 
         // Si el archivo no existe, intentamos buscarlo dentro de una subcarpeta
         if (!file_exists($archivo)) {
@@ -30,5 +29,5 @@
     </div>
 </div>
 
-<!-- Incluir el footer -->
 <?php include 'includes/footer.php'; ?>
+<!-- Incluir el footer -->

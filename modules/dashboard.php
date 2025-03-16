@@ -52,22 +52,72 @@
 
     <!DOCTYPE html>
     <html lang="es">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard - Asociaciones</title>
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    </head>
-    <body>
-        <div class="container mt-5">
-            <h2 class="mb-4"></h2>
-            <div class="row">
+        <link rel="stylesheet" href="assets/css/custom.css">
+        <style>
+            /* Personalización de las cards */
+            .card-grande {
+                min-height: 200px;
+                /* Misma altura para todas las cards */
+                padding: 25px;
+                /* Espaciado interno */
+                font-size: 1.2rem;
+                /* Tamaño del texto */
+                border-radius: 0.5rem;
+                /* Bordes redondeados */
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                /* Sombra ligera */
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
 
+            /* Efecto hover para destacar las cards */
+            .card-grande:hover {
+                transform: scale(1.05);
+                /* Aumenta ligeramente el tamaño */
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                /* Sombra más pronunciada */
+            }
+
+            /* Iconos más grandes y con mejor visibilidad */
+            .card-header i {
+                font-size: 1.5rem;
+                /* Tamaño del icono */
+                margin-right: 10px;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                /* Sombra para resaltar */
+            }
+
+            /* Texto del título más llamativo */
+            .card-header {
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 1.3rem;
+            }
+
+            /* Estilo del número principal */
+            .card-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container mx-auto p-2 ">
+            <h2 class="mb-4"></h2>
+            <div class="row ms-lg">
                 <!-- Caja Total de Socios -->
                 <div class="col-md-3">
-                    <div class="card text-white bg-primary mb-3">
-                        <div class="card-header"><i class="bi bi-person"></i> Total de Socios</div>
-                        <div class="card-body">
+                    <div class="card text-white bg-primary mb-3 card-grande">
+                        <div class="card-header"><i class="fa-solid fa-users"></i> Total de Socios</div>
+                        <div class="card-body text-center">
                             <h1 class="card-title"><?= $total_socios; ?></h1>
                         </div>
                     </div>
@@ -75,9 +125,9 @@
 
                 <!-- Caja Total de Asociaciones -->
                 <div class="col-md-3">
-                    <div class="card text-white bg-success mb-3">
-                        <div class="card-header"><i class="bi bi-people"></i> Total de Asociaciones</div>
-                        <div class="card-body">
+                    <div class="card text-white bg-success mb-3 card-grande">
+                        <div class="card-header"><i class="fa-solid fa-handshake"></i> Total de Asociaciones</div>
+                        <div class="card-body text-center">
                             <h1 class="card-title"><?= $total_asociaciones; ?></h1>
                         </div>
                     </div>
@@ -85,9 +135,9 @@
 
                 <!-- Caja Socios Múltiples -->
                 <div class="col-md-3">
-                    <div class="card text-white bg-warning mb-3">
-                        <div class="card-header"><i class="bi bi-people-fill"></i> Duplicidad de socios</div>
-                        <div class="card-body">
+                    <div class="card text-white bg-warning mb-3 card-grande">
+                        <div class="card-header"><i class="fa-solid fa-user-group"></i> Duplicidad de socios</div>
+                        <div class="card-body text-center">
                             <h1 class="card-title"><?= $socios_multiples; ?></h1>
                         </div>
                     </div>
@@ -95,9 +145,9 @@
 
                 <!-- Total de Asociados -->
                 <div class="col-md-3">
-                    <div class="card text-white bg-info mb-3">
-                        <div class="card-header"><i class="bi bi-bar-chart"></i> Total de Asociados</div>
-                        <div class="card-body">
+                    <div class="card text-white bg-info mb-3 card-grande">
+                        <div class="card-header"><i class="fa-solid fa-chart-bar"></i> Total de Asociados</div>
+                        <div class="card-body text-center">
                             <h1 class="card-title"><?= $total_asociados; ?></h1>
                         </div>
                     </div>
@@ -105,9 +155,9 @@
 
                 <!-- Caja de Total de Socios Verificados -->
                 <div class="col-md-3">
-                    <div class="card text-white bg-secondary mb-3">
-                        <div class="card-header"><i class="bi bi-check-circle"></i> Socios Verificados</div>
-                        <div class="card-body">
+                    <div class="card text-white bg-secondary mb-3 card-grande">
+                        <div class="card-header"><i class="fa-solid fa-circle-check"></i> Socios Verificados</div>
+                        <div class="card-body text-center">
                             <h1 class="card-title"><?= $total_verificados; ?></h1>
                         </div>
                     </div>
@@ -115,17 +165,17 @@
 
                 <!-- Caja de Total de Socios No Verificados -->
                 <div class="col-md-3">
-                    <div class="card text-white bg-danger mb-3">
-                        <div class="card-header"><i class="bi bi-x-circle"></i> Socios No Verificados</div>
-                        <div class="card-body">
+                    <div class="card text-white bg-danger mb-3 card-grande">
+                        <div class="card-header"><i class="fa-solid fa-circle-xmark"></i> Socios No Verificados</div>
+                        <div class="card-body text-center">
                             <h1 class="card-title"><?= $total_no_verificados; ?></h1>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </body>
+
     </html>
 
     <?php $conn->close(); ?>

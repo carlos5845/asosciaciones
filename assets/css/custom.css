@@ -1,4 +1,39 @@
-.sidebar {
-    overflow-y: auto;
-    max-height: 85vh;
+/* Personalización de tamaños de fuente */
+
+/* Tamaños específicos */
+.texto-pequeno {
+  font-size: 12px;
 }
+
+.texto-mediano {
+  font-size: 18px;
+}
+
+.texto-grande {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Personalización de títulos */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #007bff; /* Azul */
+}
+
+h2 {
+  font-size: 30px;
+  color: #28a745; /* Verde */
+}
+
+h3 {
+  font-size: 24px;
+  color: #dc3545; /* Rojo */
+}
+
+/* Personalización de textos generales */
+body {
+  font-size: 36px;
+  font-family: "Arial", sans-serif;
+}
+  

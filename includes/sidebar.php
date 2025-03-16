@@ -1,98 +1,191 @@
-<!DOCTYPE html>
-<html lang="es">
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <button class="sidebar-toggle btn btn-dark" onclick="toggleSidebar()" aria-label="Alternar menú">
+            ☰
+        </button>
+        <span>Mi Sistema</span>
+    </div>
+    <ul class="nav flex-column">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sistema</title>
-
-    <!-- Estilos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font Awesome -->
-</head>
-
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <!-- Botón menú hamburguesa alineado a la izquierda -->
+        <!-- Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuDashboard">
+                <i class="bi bi-speedometer2"></i> Dashboard <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuDashboard">
+                <ul class="nav flex-column pl-3">
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-                            <i class="fas fa-bars"></i>
+                        <a class="nav-link load-page" href="index.php?pagina=dashboard">
+                            <i class="bi bi-house-fill"></i> Inicio
                         </a>
-                    </li>
-                    <!-- Título "Mi Sistema" alineado a la izquierda -->
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="#" class="nav-link font-weight-bold">Mi Sistema</a>
                     </li>
                 </ul>
             </div>
-        </nav>
+        </li>
 
+        <!-- Socios -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuSocios">
+                <i class="bi bi-people"></i> Socios <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuSocios">
+                <ul class="nav flex-column pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=buscar_socio/buscar_socio">
+                            <i class="bi bi-search"></i> Buscar Socio
+                        </a>
+                    </li>
 
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Dashboard -->
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>Dashboard<i class="right fas fa-angle-left"></i></p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="index.php?pagina=dashboard" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inicio</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Socios -->
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>Socios<i class="right fas fa-angle-left"></i></p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="index.php?pagina=buscar_socio/buscar_socio" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Buscar Socio</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="index.php?pagina=socio/registrar_socio" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Registrar Socio</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="index.php?pagina=socio/asociar_socio" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Asociar Socio</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=socio/registrar_socio">
+                            <i class="bi bi-person-plus-fill"></i> Registrar Socio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=socio/asociar_socio">
+                            <i class="bi bi-person-check"></i> Asociar Socio
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </aside>
+        </li>
 
-    </div>
+        <!-- Grupos -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuGrupos">
+                <i class="bi bi-people-fill"></i> Grupos <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuGrupos">
+                <ul class="nav flex-column pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=asociaciones/registrar_grupo">
+                            <i class="bi bi-folder-plus"></i> Registrar Grupo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=grupo/dia_trabajo">
+                            <i class="bi bi-calendar-event"></i> Día de Trabajo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery (Debe ir antes de AdminLTE) -->
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-</body>
+        <!-- Documentos -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuDocumentos">
+                <i class="bi bi-folder"></i> Documentos <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuDocumentos">
+                <ul class="nav flex-column pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=acta_constitucion/registrar_constitucion">
+                            <i class="bi bi-file-text-fill"></i> Registrar Acta
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=vigencia_poder/registrar_vigencia">
+                            <i class="bi bi-calendar-check-fill"></i> Registrar Vigencia
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=padron_socios/registrar_padron">
+                            <i class="bi bi-journal-text"></i> Registrar Padrón
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=resolucion_gdh/registrar_resolucion">
+                            <i class="bi bi-file-earmark-check-fill"></i> Registrar Resolución
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
 
-</html>
+        <!-- Reportes -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuReportes">
+                <i class="bi bi-bar-chart-line-fill"></i> Reportes <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuReportes">
+                <ul class="nav flex-column pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=cruce_socios/cruce_socios">
+                            <i class="bi bi-shuffle"></i> Cruce de Información
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=documentos/documentos">
+                            <i class="bi bi-folder2-open"></i> Documentos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=reportes/grupos">
+                            <i class="bi bi-people"></i> Grupos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=reportes/dia_laborable">
+                            <i class="bi bi-calendar-event"></i> Día Laborable
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=reportes/cantidad_socios">
+                            <i class="bi bi-person-lines-fill"></i> Cantidad de Socios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=verificacion/listar_verificacion">
+                            <i class="bi bi-person-check-fill"></i> Verificacion de socios
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- Contactos -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuContactos">
+                <i class="bi bi-people-fill"></i> Contactos <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuContactos">
+                <ul class="nav flex-column pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=cruce_socios/cruce_socios">
+                            <i class="bi bi-journal-bookmark-fill"></i> Directorio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- Configuración -->
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menuConfig">
+                <i class="bi bi-gear-fill"></i> Configuración <i class="bi bi-chevron-down float-right"></i>
+            </a>
+            <div class="collapse" id="menuConfig">
+                <ul class="nav flex-column pl-3">
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=configuracion/ajustes">
+                            <i class="bi bi-tools"></i> Ajustes del Sistema
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=configuracion/preferencias">
+                            <i class="bi bi-sliders"></i> Preferencias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link load-page" href="index.php?pagina=configuracion/seguridad">
+                            <i class="bi bi-shield-lock-fill"></i> Seguridad
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+</div>
+<script src="../../menu.js"></script>

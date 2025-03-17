@@ -1,9 +1,9 @@
 <?php include 'includes/header.php'; ?>
-<div class="container-fluid">
+<div class="">
     <!-- Sidebar -->
 
     <!-- Contenido principal dinámico -->
-    <div class="main-content  mx-auto p-2">
+    <div class="content-wrapper px-2 py-2">
         <?php
         // Obtener la página desde la URL
         $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 'dashboard';

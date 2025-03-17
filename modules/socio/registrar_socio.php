@@ -10,15 +10,14 @@ if (!$conn) {
 }
 ?>
 <div class="container-fluid mt-4">
-    <div class="row">
-        <!-- Asegurar que el contenido se mantenga dentro del layout -->
-        <div class="col-md-10 offset-md-1">
-            <div class="card shadow">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card shadow w-100">
                 <div class="card-header bg-primary text-white text-center">
                     <h4><i class="fas fa-user-plus"></i> Registrar Nuevo Socio</h4>
                 </div>
                 <div class="card-body">
-                    
+
                     <!-- Contenedor de alertas -->
                     <div id="mensaje"></div>
 
@@ -89,7 +88,9 @@ if (!$conn) {
                             <button type="submit" class="btn btn-success">
                                 <i class="fas fa-save"></i> Guardar
                             </button>
-                        <a href="?pagina=socio/listar_socio" class="btn btn-primary">Ver Lista</a>
+                            <a href="?pagina=socio/listar_socio" class="btn btn-primary">
+                                <i class="fas fa-list"></i> Ver Lista
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -98,8 +99,7 @@ if (!$conn) {
     </div>
 </div>
 
+
 <!-- Incluir el script de alertas -->
 <script src="js/alertasocio.js"></script>
 <script src="js/ajax_socio.js"></script>
-
-

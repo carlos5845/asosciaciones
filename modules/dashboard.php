@@ -62,17 +62,9 @@
         <style>
             /* Personalización de las cards */
             .card-grande {
-                min-height: 200px;
-                /* Misma altura para todas las cards */
-                padding: 25px;
-                /* Espaciado interno */
-                font-size: 1.2rem;
-                /* Tamaño del texto */
-                border-radius: 0.5rem;
-                /* Bordes redondeados */
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                /* Sombra ligera */
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                min-height: 150px;
+                padding: 15px;
+                font-size: 1rem;
             }
 
             /* Efecto hover para destacar las cards */
@@ -97,14 +89,13 @@
                 font-weight: bold;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                font-size: 1.3rem;
+                font-size: 0.7rem;
             }
 
             /* Estilo del número principal */
             .card-title {
-                font-size: 1.5rem;
-                font-weight: bold;
-                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                font-size: 2.5rem;
+                /* Reducir tamaño del número */
             }
         </style>
     </head>
@@ -126,7 +117,7 @@
                 <!-- Caja Total de Asociaciones -->
                 <div class="col-md-3">
                     <div class="card text-white bg-success mb-3 card-grande">
-                        <div class="card-header"><i class="fa-solid fa-handshake"></i> Total de Asociaciones</div>
+                        <div class="card-header"><i class="fa-solid fa-handshake"></i> Total Asociaciones</div>
                         <div class="card-body text-center">
                             <h1 class="card-title"><?= $total_asociaciones; ?></h1>
                         </div>
@@ -136,7 +127,7 @@
                 <!-- Caja Socios Múltiples -->
                 <div class="col-md-3">
                     <div class="card text-white bg-warning mb-3 card-grande">
-                        <div class="card-header"><i class="fa-solid fa-user-group"></i> Duplicidad de socios</div>
+                        <div class="card-header"><i class="fa-solid fa-user-group"></i>Duplicidad de socios</div>
                         <div class="card-body text-center">
                             <h1 class="card-title"><?= $socios_multiples; ?></h1>
                         </div>

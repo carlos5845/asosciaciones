@@ -48,7 +48,7 @@ $total_paginas = ceil($total_actas / $registros_por_pagina);
 </head>
 
 <div class="container mt-5">
-    <div class="card shadow">
+    <div class="card shadow w-100">
         <div class="card-header bg-primary text-white text-center">
             <h4><i class="fas fa-list"></i> Listado de Actas de Constitución</h4>
         </div>
@@ -94,7 +94,7 @@ $total_paginas = ceil($total_actas / $registros_por_pagina);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
+                        <?php
                         $counter = $offset + 1;
                         if ($result->num_rows > 0):
                             while ($row = $result->fetch_assoc()): ?>
@@ -126,37 +126,37 @@ $total_paginas = ceil($total_actas / $registros_por_pagina);
 
 
                 <!-- Paginación -->
-         <?php if ($total_paginas > 1): ?>
-           <nav>
-           <ul class="pagination justify-content-center">
-            <?php
-            $query_params = $_GET;
-            unset($query_params['pagina']);
-            $base_url = "listar_constitucion.php?" . http_build_query($query_params);
-            ?>
+                <?php if ($total_paginas > 1): ?>
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <?php
+                            $query_params = $_GET;
+                            unset($query_params['pagina']);
+                            $base_url = "listar_constitucion.php?" . http_build_query($query_params);
+                            ?>
 
-            <li class="page-item <?= ($pagina_actual == 1) ? 'disabled' : '' ?>">
-                <a class="page-link" href="<?= $base_url ?>&pagina=1">Primera</a>
-            </li>
+                            <li class="page-item <?= ($pagina_actual == 1) ? 'disabled' : '' ?>">
+                                <a class="page-link" href="<?= $base_url ?>&pagina=1">Primera</a>
+                            </li>
 
-            <li class="page-item <?= ($pagina_actual == 1) ? 'disabled' : '' ?>">
-                <a class="page-link" href="<?= $base_url ?>&pagina=<?= $pagina_actual - 1 ?>">Anterior</a>
-            </li>
+                            <li class="page-item <?= ($pagina_actual == 1) ? 'disabled' : '' ?>">
+                                <a class="page-link" href="<?= $base_url ?>&pagina=<?= $pagina_actual - 1 ?>">Anterior</a>
+                            </li>
 
-            <li class="page-item active">
-                <span class="page-link"><?= $pagina_actual ?></span>
-            </li>
+                            <li class="page-item active">
+                                <span class="page-link"><?= $pagina_actual ?></span>
+                            </li>
 
-            <li class="page-item <?= ($pagina_actual == $total_paginas) ? 'disabled' : '' ?>">
-                <a class="page-link" href="<?= $base_url ?>&pagina=<?= $pagina_actual + 1 ?>">Siguiente</a>
-            </li>
+                            <li class="page-item <?= ($pagina_actual == $total_paginas) ? 'disabled' : '' ?>">
+                                <a class="page-link" href="<?= $base_url ?>&pagina=<?= $pagina_actual + 1 ?>">Siguiente</a>
+                            </li>
 
-            <li class="page-item <?= ($pagina_actual == $total_paginas) ? 'disabled' : '' ?>">
-                <a class="page-link" href="<?= $base_url ?>&pagina=<?= $total_paginas ?>">Última</a>
-            </li>
-         </ul>
-        </nav>
-     <?php endif; ?>
+                            <li class="page-item <?= ($pagina_actual == $total_paginas) ? 'disabled' : '' ?>">
+                                <a class="page-link" href="<?= $base_url ?>&pagina=<?= $total_paginas ?>">Última</a>
+                            </li>
+                        </ul>
+                    </nav>
+                <?php endif; ?>
             </div>
 
         </div>

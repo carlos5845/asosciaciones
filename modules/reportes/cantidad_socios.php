@@ -1,6 +1,5 @@
 <head>
 </head>
-
 <body>
     <div class="container-lg">
         <h4 class="text-center mb-3">Lista de Grupos y Cantidad de Socios</h4>

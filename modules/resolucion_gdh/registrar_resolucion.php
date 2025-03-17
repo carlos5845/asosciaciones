@@ -11,13 +11,13 @@ if (!$conn) {
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow">
+        <div class="col-12">
+            <div class="card shadow w-100">
                 <div class="card-header bg-primary text-white text-center">
                     <h4><i class="fas fa-file-upload"></i> Registrar Resolución GDH</h4>
                 </div>
                 <div class="card-body">
-                    
+
                     <!-- Mensajes de alerta -->
                     <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -55,32 +55,34 @@ if (!$conn) {
                         <div class="form-group">
                             <label for="grupo">Grupo:</label>
                             <div class="d-flex">
-                            <select name="grupo_id" class="form-control" required>
-                                <option value="">Selecciona un grupo</option>
-                                <?php
-                                $query = "SELECT idgrupo, nombre_grupo FROM grupo";
-                                $result = $conn->query($query);
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<option value='{$row['idgrupo']}'>{$row['nombre_grupo']}</option>";
+                                <select name="grupo_id" class="form-control w-100" required>
+                                    <option value="">Selecciona un grupo</option>
+                                    <?php
+                                    $query = "SELECT idgrupo, nombre_grupo FROM grupo";
+                                    $result = $conn->query($query);
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<option value='{$row['idgrupo']}'>{$row['nombre_grupo']}</option>";
+                                        }
+                                    } else {
+                                        echo "<option disabled>No hay grupos disponibles</option>";
                                     }
-                                } else {
-                                    echo "<option disabled>No hay grupos disponibles</option>";
-                                }
-                                ?>
-                            </select>
-                             <a href="http://localhost/asociaciones/modules/asociaciones/registrar_grupo.php" class="btn btn-primary">
+                                    ?>
+                                </select>
+                                <a href="http://localhost/asociaciones/modules/asociaciones/registrar_grupo.php"
+                                    class="btn btn-primary ml-2">
                                     <i class="fas fa-plus"></i>
                                 </a>
-                             </div>
+                            </div>
                         </div>
 
                         <!-- Botones de Guardar y Ver Lista -->
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-success">
-                                <i class="fas fa-save"></i> Guardar Resolucion
+                                <i class="fas fa-save"></i> Guardar Resolución
                             </button>
-                            <a href="http://localhost/asociaciones/modules/resolucion_gdh/listar_resolucion.php" class="btn btn-primary">
+                            <a href="http://localhost/asociaciones/modules/resolucion_gdh/listar_resolucion.php"
+                                class="btn btn-primary">
                                 <i class="fas fa-list"></i> Ver Lista
                             </a>
                         </div>

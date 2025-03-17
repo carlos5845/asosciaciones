@@ -9,9 +9,9 @@ if (!$conn) {
 }
 ?>
 
-<div class="container mt-5">
+<div class="container-fluid mt-2">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-12"> <!-- Ocupa todo el ancho -->
             <div class="card shadow">
                 <div class="card-header bg-primary text-white text-center">
                     <h4><i class="fas fa-users"></i> Registrar Grupo</h4>
@@ -99,6 +99,7 @@ if (!$conn) {
                         </div>
                     </form>
                 </div>
+            </div>
         </div>
     </div>
 </div>

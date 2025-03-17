@@ -52,4 +52,3 @@ if (isset($_GET['idacta']) && is_numeric($_GET['idacta'])) {
 header('Location: listar_constitucion.php');
 exit();  // Asegurarse de que no se ejecute más código
 $conn->close();
-?>

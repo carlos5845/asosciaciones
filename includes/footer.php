@@ -8,13 +8,13 @@
     <style>
         .footer {
             color: black;
-            font-size: 45px;
+            font-size: 15px;
         }
     </style>
 </head>
 
 <body>
-    <footer class="text-center py-3 fixed-bottom">
+    <footer class="text-center py-3 fixed-bottom ">
         <div class="container">
             <p class="footer">&copy; 2025 Mi Sistema. Todos los derechos reservados.</p>
         </div>

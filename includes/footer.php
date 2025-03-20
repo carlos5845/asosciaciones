@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +11,10 @@
 </head>
 
 <body>
-    <footer class="text-center py-3 fixed-bottom ">
+    <footer class="text-center py-3 fixed-bottom w-100 bg-light">
         <div class="container">
-            <p class="footer">&copy; 2025 Mi Sistema. Todos los derechos reservados.</p>
+            <p class="mb-0">&copy; 2025 Mi Sistema. Todos los derechos reservados.</p>
         </div>
     </footer>
-</body>
 
-</html>
+</body>

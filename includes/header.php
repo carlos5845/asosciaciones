@@ -40,9 +40,13 @@ ob_start(); // Inicia el buffer de salida
 
         <!-- Sidebar -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="index.php" class="brand-link">
-                <span class="brand-text font-weight-light">Mi Sistema</span>
-            </a>
+            <div class="brand-link d-flex justify-content-start align-items-center gap-5">
+                <i class="fa-solid fa-sitemap mr-3 ml-4"></i>
+                <a href="index.php" class="">
+                    <span class="text-info bg-dark font-weight-light text-center">Mi Sistema</span>
+                </a>
+            </div>
+
 
             <div class="sidebar">
                 <nav class="mt-2">

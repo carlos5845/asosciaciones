@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="bg-black/30 text-white px-6 py-4 fixed top-0 w-full z-50 backdrop-blur-sm"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <h1 class="text-xl font-bold">Mi Sitio Web</h1>
+
+        <!-- Menú para pantallas grandes -->
+        <nav class="hidden md:flex">
+          <ul class="flex space-x-6">
+            <li><a href="#" class="hover:underline">Inicio</a></li>
+            <li><a href="#" class="hover:underline">Acerca de</a></li>
+            <li><a href="#" class="hover:underline">Servicios</a></li>
+            <li><a href="#" class="hover:underline">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Botón de menú hamburguesa en móviles -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Menú desplegable para móviles -->
+      <nav
+        id="mobile-menu"
+        class="hidden absolute top-16 left-0 w-full bg-black/80 text-white p-4 md:hidden"
+      >
+        <ul class="flex flex-col space-y-4">
+          <li><a href="#" class="hover:underline">Inicio</a></li>
+          <li><a href="#" class="hover:underline">Acerca de</a></li>
+          <li><a href="#" class="hover:underline">Servicios</a></li>
+          <li><a href="#" class="hover:underline">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      class="bg-[url(/assets/img/fondo.png)] bg-cover bg-center h-screen flex justify-center items-center"
+    >
+      <div
+        class="container mx-auto grid grid-cols-1 grid-rows-1 max-w-4xl overflow-hidden md:grid-cols-2"
+      >
+        <div class="bg-black/30 backdrop-blur-sm p-6 rounded-l-md">
+          <div class="text-2xl font-bold text-center">
+            <h1 class="text-white">Welcome back</h1>
+            <h5 class="text-base font-noraml text-gray-500">
+              Login to your Acme Inc account
+            </h5>
+          </div>
+          <form action="">
+            <div class="flex flex-col gap-4 p-6">
+              <div class="grid gap-2">
+                <label for="name " class="text-gray-300 text-sm">Nombre</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  id="nombre"
+                  class="w-full border border-gray-300 p-2 rounded-md"
+                />
+              </div>
+              <div class="grid gap-2">
+                <label for="email" class="text-gray-300 text-sm">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="w-full border border-gray-300 p-2 rounded-md"
+                  required
+                />
+              </div>
+              <div class="grid gap-2">
+                <div class="flex justify-between items-center">
+                  <label for="password" class="text-gray-300 text-sm"
+                    >Contraseña</label
+                  >
+                  <span>
+                    <a
+                      href=""
+                      class="ml-auto text-sm underline-offset-2 hover:underline text-gray-500"
+                    >
+                      Forgot your password?
+                    </a>
+                  </span>
+                </div>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="w-full border border-gray-300 p-2 rounded-md"
+                />
+              </div>
+              <div>
+                <button class="bg-[#d754b0] text-white p-2 rounded-md w-full">
+                  Enviar
+                </button>
+              </div>
+
+              <!-- Corrección de "Or continue with" -->
+              <div class="relative flex items-center justify-center text-sm">
+                <div class="w-full border-t border-gray-300"></div>
+                <span
+                  class="px-4 text-gray-500 bg-transparent whitespace-nowrap"
+                  >Or continue with</span
+                >
+                <div class="w-full border-t border-gray-300"></div>
+              </div>
+
+              <div class="grid grid-cols-3 grid-rows-1 gap-4">
+                <button class="w-full bg-blue-500 text-white p-2 rounded-md">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </button>
+                <button class="w-full bg-red-500 text-white p-2 rounded-md">
+                  <i class="fa-brands fa-google"> </i>
+                </button>
+                <button class="w-full bg-black text-white p-2 rounded-md">
+                  <i class="fa-brands fa-github"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="hidden md:block">
+          <img
+            src="/assets/img/imagen.png"
+            alt=""
+            class="inset-0 h-full w-full object-cover rounded-r-md"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

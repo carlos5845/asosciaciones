@@ -1,18 +1,37 @@
 <?php
-// Datos de la base de datos
-$host = 'localhost';        // Cambiar si es diferente
-$user = 'root';             // Cambiar según tus credenciales
-$password = '';             // Cambiar según tus credenciales
-$database = 'data_asociaciones';  // Nombre de la base de datos
+// Función para cargar variables del archivo .env manualmente
+function loadEnv($path)
+{
+    if (!file_exists($path)) {
+        return;
+    }
 
-// Crear la conexión utilizando el estilo orientado a objetos
-$conn = new mysqli($host, $user, $password, $database);
-
-// Comprobar si la conexión tiene errores
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos($line, '#') === 0) {
+            continue;
+        }
+        list($key, $value) = explode('=', $line, 2);
+        $_ENV[trim($key)] = trim($value);
+    }
 }
 
-// Establecer el conjunto de caracteres para evitar problemas con caracteres especiales
+// Cargar el archivo .env
+loadEnv(__DIR__ . '/.env');
+
+// Obtener datos de la base de datos desde el .env
+$host = $_ENV['DB_HOST'] ?? 'localhost';
+$user = $_ENV['DB_USERNAME'] ?? 'root';
+$password = $_ENV['DB_PASSWORD'] ?? '';
+$database = $_ENV['DB_DATABASE'] ?? 'data_asociaciones';
+
+// Crear la conexión
+$conn = new mysqli($host, $user, $password, $database);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("❌ Error de conexión: " . $conn->connect_error);
+}
+
+// Configurar caracteres especiales
 $conn->set_charset('utf8');
-?>
